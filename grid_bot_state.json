@@ -1,0 +1,48 @@
+{
+    "open_buy_orders": {
+        "4018.18": {
+            "grid_index": 63,
+            "quantity": 0.001
+        },
+        "4023.23": {
+            "grid_index": 64,
+            "quantity": 0.001
+        },
+        "4028.28": {
+            "grid_index": 65,
+            "quantity": 0.001
+        },
+        "4033.33": {
+            "grid_index": 66,
+            "quantity": 0.001
+        },
+        "4038.38": {
+            "grid_index": 67,
+            "quantity": 0.001
+        },
+        "4043.43": {
+            "grid_index": 68,
+            "quantity": 0.001
+        },
+        "4048.48": {
+            "grid_index": 69,
+            "quantity": 0.001
+        },
+        "4053.54": {
+            "grid_index": 70,
+            "quantity": 0.001
+        },
+        "4058.59": {
+            "grid_index": 71,
+            "quantity": 0.001
+        },
+        "4063.64": {
+            "grid_index": 72,
+            "quantity": 0.001
+        },
+        "4068.69": {
+            "grid_index": 73,
+            "quantity": 0.001
+        }
+    }
+}
