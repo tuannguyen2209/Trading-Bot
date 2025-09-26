@@ -9,29 +9,30 @@ CONFIG = {
     'symbol': 'ETH/USDT',
     'exchange_name': 'binance',
     'grid': {
-        'upper_price': 4200,
-        'lower_price': 3700,
-        'levels': 50,
+        'upper_price': 4600,
+        'lower_price': 3500,
+        'levels': 150,
     },
     'trade': {
-        'fee_percent': 0.1,
-        'quantity_per_grid': 0.0001
+        'fee_percent': 0.075,
+        'quantity_per_grid': 0.1
     },
     'backtest': {
         'timeframe': '1h', # Khung thời gian của nến (1h, 4h, 1d)
-        'since': '2025-08-01T00:00:00Z' # Bắt đầu lấy dữ liệu từ ngày này
+        'since': '2025-01-01T00:00:00Z', # Bắt đầu lấy dữ liệu từ ngày này
+        "to": "2025-06-01T00:00:00Z" # Kết thúc lấy dữ liệu vào ngày này
     }
 }
 
 # --- Khởi tạo kết nối sàn ---
 exchange = getattr(ccxt, CONFIG['exchange_name'])()
 
-def fetch_historical_data(symbol, timeframe, since):
+def fetch_historical_data(symbol, timeframe, since, to):
     """
     Hàm mới: Tải dữ liệu OHLCV lịch sử từ sàn giao dịch.
     """
     try:
-        print(f"Đang tải dữ liệu lịch sử cho {symbol} từ {since}...")
+        print(f"Đang tải dữ liệu lịch sử cho {symbol} từ {since} đến {to}...")
         # Lấy dữ liệu nến: [timestamp, open, high, low, close, volume]
         ohlcv = exchange.fetch_ohlcv(symbol, timeframe, exchange.parse8601(since), limit=1000)
         if not ohlcv:
@@ -60,7 +61,8 @@ def run_backtest():
     historical_data = fetch_historical_data(
         CONFIG['symbol'],
         CONFIG['backtest']['timeframe'],
-        CONFIG['backtest']['since']
+        CONFIG['backtest']['since'],
+        CONFIG['backtest']['to']
     )
     if historical_data is None:
         return
