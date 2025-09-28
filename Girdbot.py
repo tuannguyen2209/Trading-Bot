@@ -11,7 +11,7 @@ CONFIG = {
     'grid': {
         'upper_price': 4600,
         'lower_price': 3500,
-        'levels': 150,
+        'levels': 100,
     },
     'trade': {
         'fee_percent': 0.075,
@@ -19,8 +19,8 @@ CONFIG = {
     },
     'backtest': {
         'timeframe': '1h', # Khung thời gian của nến (1h, 4h, 1d)
-        'since': '2025-01-01T00:00:00Z', # Bắt đầu lấy dữ liệu từ ngày này
-        "to": "2025-06-01T00:00:00Z" # Kết thúc lấy dữ liệu vào ngày này
+        'since': '2025-08-01T00:00:00Z', # Bắt đầu lấy dữ liệu từ ngày này
+        "to": "2025-09-26T00:00:00Z" # Kết thúc lấy dữ liệu vào ngày này
     }
 }
 
